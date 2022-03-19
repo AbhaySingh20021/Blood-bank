@@ -36,7 +36,7 @@ html {
 
 
 body {
-    color: #5b5b5b;
+    background-color: rgb(230, 230, 230);
     font-size: 15pt;
     line-height: 1.85em;
     font-family: 'Source Sans Pro', sans-serif;
@@ -130,7 +130,7 @@ label{
 	word-wrap: normal;
 }
 .firstside{
-	background-color:darkgray;
+	
 	padding-top: 20px;
 	padding-bottom: 50px;
 }
@@ -176,20 +176,12 @@ nav{
 }
 
 
-.firstside{
-background-color:  white;
-   
 
-}
 .nav1{
 	position: fixed;
     z-index: 2;
 }
-.mainback{
-    background-image: url("./images/depositphotos_426598518-stock-illustration-blood-drop-illustration-isolated-on.jpg");
 
-    
-}
 .style2{
     
 
@@ -200,7 +192,7 @@ background-color:  white;
 .style2 h2{
     text-align: center;
     font-weight: 500;
-    color: aquamarine;
+    
 
 
 }
@@ -228,4 +220,17 @@ background-color:  white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 500;
     margin-top: 20px;
+}
+
+h1{
+    color: #ef8376;
+}
+.card{
+    
+    background-color:rgb(255, 102, 26);
+    color: black;
+}
+button{
+  background-color:   black;
+  
 }
