@@ -1,67 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Appoointment</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <form action="SEND ADDRESS" id="ft-form" method="POST" accept-charset="UTF-8">
-        <fieldset>
-          <legend>For person</legend>
-          <label>
-            Name
-            <input type="text" name="name" required>
-          </label>
-          <div class="two-cols">
+  <section>
+    <div class="container">
+      <form>
+
+        <div>
+
+          <div class="form-group step step-1">
+            <h1>For Person</h1>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone" required>
+          </div>
+          
+          <div class="form-group step step-2">
+            <h1>Appointment request</h1>
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" required>
             <label>
-              Email address
-              <input type="email" name="email" required>
+              <input type="hidden" name="morning-desired" value="no">
+              <input type="checkbox" name="morning-desired" value="yes">
+              Morning
             </label>
             <label>
-              Phone number
-              <input type="tel" name="phone">
+              <input type="hidden" name="afternoon-desired" value="no">
+              <input type="checkbox" name="afternoon-desired" value="yes">
+              Afternoon
             </label>
           </div>
-        </fieldset>
-        <fieldset>
-          <legend>Appointment request</legend>
-          <div class="two-cols">
+          
+          <div class="form-group step step-3">
+            <h1>Confirmation requested by</h1>
             <label>
-              Datum
-              <input type="date" name="Appointment request" required>
+              <input type="radio" name="confirmation-method" value="email" checked>Email
             </label>
-            <div class="inline">
-              <label>
-                <input type="hidden" name="Morning desired" value="no">
-                <input type="checkbox" name="Morning desired" value="yes">
-                Morning
-              </label>
-              <label>
-                <input type="hidden" name="Afternoon desired" value="no">
-                <input type="checkbox" name="Afternoon desired" value="yes">
-                Afternoon
-              </label>
-            </div>
+            <label>
+              <input type="radio" name="confirmation-method" value="phone">Phone
+            </label>
+
           </div>
-          <p>Confirmation requested by</p>
-          <div class="inline">
-            <label>
-              <input type="radio" name="Confirmation requested by" value="email" checked>
-              Email
-            </label>
-            <label>
-              <input type="radio" name="Confirmation requested by" value="phone">
-              Phone call
-            </label>
-          </div>
-        </fieldset>
-        <div class="btns">
-          <input type="text" name="_gotcha" value="" style="display:none;">
-          <input type="submit" value="Submit request">
+
         </div>
       </form>
+    </div>
+  </section>
 </body>
+
 </html>
