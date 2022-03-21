@@ -161,13 +161,17 @@ $("#inputState").change(function(){
 
 });
 
-const submitBtn= document.getElementById('submit-btn');
+const form =document.querySelector('form');
 
-submitBtn.addEventListener('click',(e)=>{
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
     const inputs=[];
-    form.querySelectorAll('input').forEach(input => {
+    form.querySelectorAll('select').forEach(input => {
         const {name, value} = input;
         inputs.push({name, value});
     })
     console.log(inputs);
+    form.reset();
 });
+
+
