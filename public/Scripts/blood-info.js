@@ -5,7 +5,8 @@ import {
   child,
   get,
   update,
-  set
+  set,
+  onValue
 } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js";
 
 import {
@@ -30,6 +31,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const database = getDatabase(app);
 const dref = ref(database);
+var donarsUid = [];
 
 // const bankname = document.getElementsByClassName("name2");
 
@@ -44,36 +46,69 @@ function savedata2(data) {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       uid = user.uid;
-      console.log("it works");
+      // set(child(dref, "/user/" + uid   + data), data);
 
-      get(child(dref, "appointments/"))
-        .then((snapshot) => {
-          console.log("success3");
+      const dref1 = ref(database, "/appointments");
 
-          if (snapshot.exists()) {
-            console.log("success2");
-            var date = snapshot.val();
-            if (date) {
-              var array1 = Object.values(date);
-              let lastValue = array1[Object.keys(array1).pop()];
-
-              const dbRef = ref(
-                database,
-                "/appointments/" + lastValue.newPostKey
-              );
-              update(dbRef, { BankName: data })
-                .then(() => {
-                  console.log("Data updated");
-                })
-                .catch((e) => {
-                  console.log(e);
-                });
-            }
+      onValue(dref1, (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+          if (childSnapshot.val().userUid === uid) {
+            donarsUid.push(childSnapshot.val());
           }
-        })
-        .catch((e) => {
-          console.log(e);
         });
+        if (donarsUid) {
+          var array1 = Object.values(donarsUid);
+          let lastValue = array1[Object.keys(array1).pop()];
+
+          const dbRef = ref(database, "/appointments/" + lastValue.newPostKey);
+          update(dbRef, { BankName: data })
+            .then(() => {
+              console.log("Data updated");
+            })
+            .catch((e) => {
+              console.log(e);
+            });
+        }
+      });
+
+      // get(child(dref, "/user/" + uid)).then((snapshot) => {
+      //   if (snapshot.exists()) {
+      //     alert("success1");
+
+      //     alert(snapshot.val().firstName)
+      //   } else{
+      //     alert("success2");
+
+      //   }});
+
+      // get(child(dref, "/appointments/"))
+      //   .then((snapshot) => {
+      //     if (snapshot.exists()) {
+      //       alert("success2");
+      //       var date = snapshot.val();
+      //       if (date) {
+      //         var array1 = Object.values(date);
+      //         let lastValue = array1[Object.keys(array1).pop()];
+
+      //         const dbRef = ref(
+      //           database,
+      //           "/appointments/" + lastValue.newPostKey
+      //         );
+      //         update(dbRef, { BankName: data })
+      //           .then(() => {
+      //             console.log("Data updated");
+      //           })
+      //           .catch((e) => {
+      //             console.log(e);
+      //           });
+      //       }
+      //     } else {
+      //       alert("It does not");
+      //     }
+      //   })
+      //   .catch((e) => {
+      //     console.log(e);
+      //   });
     }
   });
 }

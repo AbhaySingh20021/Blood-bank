@@ -42,9 +42,42 @@ var map2 = document.getElementById("map2");
 map2.style.visibility = "hidden";
 
 var uid;
+
+
+function myFunction(mail) {
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "abhaysengar3250@gmail.com",
+      pass: "vruusldavhfabssd"
+    }
+  });
+
+  var mailOptions = {
+    from: mail,
+    to: "abhaysengar3250@gmail.com",
+    subject: "Appointment",
+    text: "Your Appointment is booked!",
+    html: "<h1>Your Appointment is booked!</h1>"
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+}
+
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     uid = user.uid;
+    console.log(user);
+
+    // myFunction(user.email);
+
 
     get(child(dref, "appointments/"))
       .then((snapshot) => {
@@ -112,6 +145,9 @@ function initMap() {
       }
     );
   }
+
+
+  
 
   function print(params) {
     var banks = document.getElementById("bankname");

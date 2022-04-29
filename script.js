@@ -169,7 +169,7 @@ router.post("/blood-info2", function (req, res) {
   });
 });
 
-function myFunction(mail) {
+function myFunction(mail, name, message) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -179,10 +179,10 @@ function myFunction(mail) {
   });
 
   var mailOptions = {
-    from: "abhaysengar3250@gmail.com",
-    to: mail,
-    subject: "Sending Email using Node.js",
-    text: "That was easy!"
+    from: mail,
+    to: "abhaysengar3250@gmail.com",
+    subject: name,
+    text: message
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
@@ -196,7 +196,7 @@ function myFunction(mail) {
 
 router.post("/contactus", function (req, res) {
   console.log(req.body);
-  myFunction(req.body.mail);
+  myFunction(req.body.mail, req.body.name, req.body.message);
   res.redirect("/");
 });
 

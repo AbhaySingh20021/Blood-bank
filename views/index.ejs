@@ -1,5 +1,6 @@
 <%- include("partials/header"); -%>
 <script type="module" src="Scripts/profile-script.js" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
 
 	</div>
@@ -21,15 +22,14 @@
 
 		<div id="page-wrapper" class="firstside">
 
-			<div class="contact" >
+			<!-- <div class="contact" >
 
 
 				<div class="card card1">
 					<form action="/contactus" method="post">
 					
-						 <!-- <img src="./images/Screenshot 2022-03-18 232638.jpg" class="rounded float-right" alt="...">  -->
 
-						<div class="form-group row">
+						 <div class="form-group row">
 							<label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
 							<div class="">
 								<input type="text" id="inputEmail3" class="form-control" name="" placeholder="Name">
@@ -50,7 +50,7 @@
 					</form>
 				
 				</div>
-			</div>
+			</div> --> 
 			
 		
 			<div>
@@ -78,12 +78,10 @@
 		</div>
 			</div>
 
-
-
 	</section>
-	
-	
 
+	
+	
 
 	<div class="mainback">
 
@@ -185,6 +183,55 @@
 	</div>
 
 	</div>
+
+
+  <div class="container1">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">Surkhet, NP12</div>
+          <div class="text-two">Birendranagar 06</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+0098 9893 5647</div>
+          <div class="text-two">+0096 3434 5678</div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">codinglab@gmail.com</div>
+          <div class="text-two">info.codinglab@gmail.com</div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <p>If you have any types of quries related to our website, you can send us message from here. It's our pleasure to help you.</p>
+		<form action="/contactus" method="post">
+        <div class="input-box">
+          <input id="inputEmail3" name="name"  style="width:50%;" type="text" placeholder="Enter your name">
+        </div>
+        <div class="input-box">
+          <input id="inputPassword3" name="mail"  style="width:50%;" type="text" placeholder="Enter your email">
+        </div>
+        <div class="input-box message-box">
+			<input type="text" name="message" style="width:100%;" placeholder="Enter your message">
+			
+        </div>
+        <div class="button">
+			<button class="btn1" type="submit" > Contact us</button>
+
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+
+	
+
 
 
 
