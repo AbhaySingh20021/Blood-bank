@@ -46,7 +46,6 @@ function savedata2(data) {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       uid = user.uid;
-      // set(child(dref, "/user/" + uid   + data), data);
 
       const dref1 = ref(database, "/appointments");
 
@@ -56,6 +55,7 @@ function savedata2(data) {
             donarsUid.push(childSnapshot.val());
           }
         });
+        console.log(donarsUid);
         if (donarsUid) {
           var array1 = Object.values(donarsUid);
           let lastValue = array1[Object.keys(array1).pop()];

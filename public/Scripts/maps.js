@@ -29,27 +29,6 @@ const database = getDatabase(app);
 
 const dref = ref(database);
 
-// function geocodeAddress() {
-//   // const address = document.getElementById("address").value;
-//   if (!address || address.length < 3) {
-//     console.log(
-//       "The address string is too short. Enter at least three symbols"
-//     );
-//     return;
-//   }
-
-//   const geocodingUrl =
-//     "https://maps.googleapis.com/maps/api/geocode/json?address=newyork&key=AIzaSyBOWKcRhKDdQmsVHx1gsKUKHHXQuqRzPvY";
-
-//   fetch(geocodingUrl)
-//     .then((result) => result.json())
-//     .then((featureCollection) => {
-//       console.log(featureCollection);
-//     });
-// }
-
-// geocodeAddress();
-
 var uid;
 let address1 = [];
 let city;
@@ -137,9 +116,6 @@ function initMap() {
             });
 
             mpas(address1);
-
-            // console.log(address1);
-            // console.log(city);
           });
         }
       });
@@ -148,24 +124,3 @@ function initMap() {
 }
 
 window.initMap = initMap;
-// const uluru = {
-//   lat: results[0].geometry.viewport.Ab.h,
-//   lng: results[0].geometry.viewport.Ua.j
-// };
-// console.log(uluru);
-// location.push(uluru);
-// console.log(x);
-// console.log(location[3]);
-// const map = new google.maps.Map(document.getElementById("map"), {
-//   zoom: 4,
-//   center: location[0]
-// });
-
-// var marker, i;
-// marker = new google.maps.Marker({
-//   position: new google.maps.LatLng(
-//     location[x].lat,
-//     location[x].lng
-//   ),
-//   map: map
-// });

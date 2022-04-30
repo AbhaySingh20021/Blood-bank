@@ -15,6 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
+app.use(function (req, res, next) {
+  setTimeout(next, 1000);
+});
+
 router.post("/findBlood", function (req, res) {
   fs.readFile("./Blood-data.json", function (err, data1) {
     if (err) throw err;

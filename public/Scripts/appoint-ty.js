@@ -43,7 +43,6 @@ map2.style.visibility = "hidden";
 
 var uid;
 
-
 function myFunction(mail) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
@@ -70,14 +69,12 @@ function myFunction(mail) {
   });
 }
 
-
 onAuthStateChanged(auth, (user) => {
   if (user) {
     uid = user.uid;
     console.log(user);
 
     // myFunction(user.email);
-
 
     get(child(dref, "appointments/"))
       .then((snapshot) => {
@@ -145,9 +142,6 @@ function initMap() {
       }
     );
   }
-
-
-  
 
   function print(params) {
     var banks = document.getElementById("bankname");
