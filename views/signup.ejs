@@ -73,21 +73,26 @@
                         <input required  style="width:50%; margin-left: 30px;" type="password" name="password" id="password" />
                     </div>
                     </div>
-                    <div style=" */display:inline-flex; */align-content: stretch;flex-wrap: wrap;flex-direction: row;display: flex;justify-content: space-between;"
-                        class="form-group">
-                        <label for="gender">Gender: </label>
-                        <label for="male">
-                            <input type="radio" id="genderMale" name="gender" value="Male">Male
-                        </label>
-                        <label for="female">
-                            <input type="radio" id="genderFemale" name="gender" value="Female">Female
-                        </label>
-                        <label for="Other">
-                            <input type="radio" id="genderOther" name="gender" value="Other">Prefer not to say
-                        </label>
+                    <div   class="form-group">
+                        
+                       <label for="">Choose Gender</label>
+                       <div style="margin-left:50px;" class="btn-group" role="group">
+                            <input type="radio" name="radio-Btn-Group" class="btn-check" id="radioBtn1">
+                            <label class="btn btn-outline-dark" for="radioBtn1">Male</label>
+                        
+                            <input type="radio" name="radio-Btn-Group" class="btn-check" id="radioBtn2">
+                            <label class="btn btn-outline-danger" for="radioBtn2">Female</label>
+                        
+                            <input type="radio" name="radio-Btn-Group" class="btn-check" id="radioBtn3">
+                            <label class="btn btn-outline-dark" for="radioBtn3">Others</label>
+                        </div>
+                       
                     </div>
-                    <button style="margin-top:60px" id="back" type="button" class="previous-btn">Prev</button>
-                    <button style="margin-top:60px" type="button" class="next-btn">Next</button>
+                   
+
+
+                    <button style="margin-top:60px;" id="back" type="button" class="previous-btn">Prev</button>
+                    <button style="margin-top:60px; z-index: 10" type="button" class="next-btn">Next</button>
                 </div>
 
                 <div class="step step-2">

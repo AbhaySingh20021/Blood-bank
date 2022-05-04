@@ -113,5 +113,5 @@ body {
 }
 
 .item:target .smenu {
-  max-height: 10em;
+  max-height: 11em;
 }

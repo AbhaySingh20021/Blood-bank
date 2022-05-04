@@ -72,13 +72,13 @@ var zip = document.getElementById("zip");
 var gender = "";
 var userType = "";
 
-document.getElementById("genderMale").addEventListener("click", (e) => {
+document.getElementById("radioBtn1").addEventListener("click", (e) => {
   gender = "Male";
 });
-document.getElementById("genderFemale").addEventListener("click", (e) => {
+document.getElementById("radioBtn2").addEventListener("click", (e) => {
   gender = "Female";
 });
-document.getElementById("genderOther").addEventListener("click", (e) => {
+document.getElementById("radioBtn3").addEventListener("click", (e) => {
   gender = "Other";
 });
 
