@@ -69,21 +69,25 @@ onAuthStateChanged(auth, (user) => {
             "-" +
             today.getDate();
 
-          if (donarsUid[i].date < date) {
+          var d1 = Date.parse(donarsUid[i].date);
+          var d2 = Date.parse(date);
+
+          if (d1 < d2) {
             cell6.innerHTML =
               '<h3 style="color:red" >' + donarsUid[i].date + "</h3>";
-            cell9.innerHTML = "Done";
+            cell9.innerHTML = '<h3 style="color:red" >' + "Done" + "</h3>";
           } else {
-            console.log("fff");
-            cell6.innerHTML = donarsUid[i].date;
-            cell9.innerHTML = "In process";
+            cell6.innerHTML =
+              '<h3 style="color:green" >' + donarsUid[i].date + "</h3>";
+            cell9.innerHTML =
+              '<h3 style="color:green" >' + "In process" + "</h3>";
           }
 
           cell2.innerHTML = donarsUid[i].name;
           cell3.innerHTML = donarsUid[i].email;
           cell1.innerHTML = donarsUid[i].newPostKey;
           cell4.innerHTML = donarsUid[i].phoneNumber;
-          cell5.innerHTML = donarsUid[i].type;
+          cell5.innerHTML = donarsUid[i].type.toUpperCase();
           cell7.innerHTML = donarsUid[i].time;
           cell8.innerHTML = donarsUid[i].BankName;
 

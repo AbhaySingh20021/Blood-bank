@@ -104,6 +104,7 @@ function initMap() {
                 var array1 = Object.values(address);
 
                 for (var i = 0; i < array1.length; i++) {
+                  console.log(city.toLowerCase(), array1[i].city.toLowerCase());
                   if (city.toLowerCase() === array1[i].city.toLowerCase()) {
                     address1[i] = array1[i].address;
                   }

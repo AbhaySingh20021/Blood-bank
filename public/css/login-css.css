@@ -49,6 +49,11 @@ section {
   border-radius: 4px;
   margin-top: 5px;
   font-size: 18px;
+  color: #525e75;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  background-color: #dddddd;
 }
 
 body {
@@ -59,4 +64,9 @@ body {
   float: left;
   margin-right: 15px;
   margin-top: 15px;
+}
+
+label {
+  font-size: 31px;
+  color: #06113c;
 }
